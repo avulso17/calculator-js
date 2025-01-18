@@ -1,0 +1,129 @@
+/* work-sans-latin-300-normal */
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/work-sans@latest/latin-300-normal.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/fontsource/fonts/work-sans@latest/latin-300-normal.woff)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* work-sans-latin-400-normal */
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/work-sans@latest/latin-400-normal.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/fontsource/fonts/work-sans@latest/latin-400-normal.woff)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --background: #e5e5e5;
+  --calc-bg: linear-gradient(180deg, #242833 0%, #16181d 100%);
+  --calc-btn-low-emphasis: #2e2f38;
+  --calc-btn-medium-emphasis: #4e505f;
+  --calc-btn-high-emphasis: #4b5efc;
+  --calc-btn-text: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: white;
+  font-family: "Work Sans", monospace;
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+}
+
+.calculator {
+  background: var(--calc-bg);
+  border-radius: 16px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 55px 20px 32px;
+  max-width: fit-content;
+}
+
+.calculator .calculator__display {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calculator .calculator__display .calculator__display__expression {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: normal;
+  opacity: 0.4;
+  height: 32px;
+}
+
+.calculator .calculator__display .calculator__display__result {
+  font-size: 86px;
+  font-weight: 300;
+  line-height: 86px;
+}
+
+.calculator .calculator__pad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.calculator .calculator__button {
+  background-color: var(--calc-btn-low-emphasis);
+  border: none;
+  border-radius: 24px;
+  color: var(--calc-btn-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 40px;
+  padding: 12px;
+  height: 72px;
+  min-width: 72px;
+}
+
+.calculator .calculator__button:hover {
+  filter: brightness(0.9);
+}
+
+.calculator .calculator__button--medium {
+  background-color: var(--calc-btn-medium-emphasis);
+}
+
+.calculator .calculator__button--high {
+  background-color: var(--calc-btn-high-emphasis);
+}
+
+.calculator .calculator__button#zero {
+  grid-column: span 2;
+  justify-content: start;
+  padding-left: 28px;
+}
